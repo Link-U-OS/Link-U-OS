@@ -1,0 +1,39 @@
+[submodule "integration"]
+	path = integration
+	url = git@github.com:Link-U-OS/integration.git
+[submodule "aimrt_protocol"]
+	path = aimrt_protocol
+	url = git@github.com:Link-U-OS/aimrt_protocol.git
+[submodule "aimrt_sensor"]
+	path = aimrt_sensor
+	url = git@github.com:Link-U-OS/aimrt_sensor.git
+[submodule "aimrt"]
+	path = aimrt
+	url = git@github.com:Link-U-OS/aimrt.git
+[submodule "aimrt_comm"]
+	path = aimrt_comm
+	url = git@github.com:Link-U-OS/aimrt_comm.git
+[submodule "aimrt_process_manager"]
+	path = aimrt_process_manager
+	url = git@github.com:Link-U-OS/aimrt_process_manager.git
+[submodule "aimrt_viz"]
+	path = aimrt_viz
+	url = git@github.com:Link-U-OS/aimrt_viz.git
+[submodule "rules_ros2"]
+	path = rules_ros2
+	url = git@github.com:Link-U-OS/rules_ros2.git
+[submodule "rl_deploy"]
+	path = rl_deploy
+	url = git@github.com:Link-U-OS/rl_deploy.git
+[submodule "rl_training"]
+	path = rl_training
+	url = git@github.com:Link-U-OS/rl_training.git
+[submodule "aimrt_health_monitor"]
+	path = aimrt_health_monitor
+	url = git@github.com:Link-U-OS/aimrt_health_monitor.git
+[submodule "aimrt_prebuilt"]
+	path = aimrt_prebuilt
+	url = git@github.com:Link-U-OS/aimrt_prebuilt.git
+[submodule "AimStudio"]
+	path = AimStudio
+	url = git@github.com:Link-U-OS/AimStudio.git

@@ -1,0 +1,64 @@
+#!/bin/bash
+RED='\033[35m'
+NC='\033[0m'
+
+# data 目录权限
+sudo chown vscode:vscode /workspaces/data
+sudo chown vscode:vscode /workspaces/.data
+
+
+# cache data 持久化
+echo -e "[Info] Linking cache data dir ⏳"
+rm -rf ~/.cache
+mkdir -p /workspaces/.data/.cache
+ln -sf /workspaces/.data/.cache ~/.cache
+tput cuu1
+tput el
+echo -e "[Info] Cache data dir linked ✔"
+
+# zsh history data 持久化
+echo -e "[Info] Linking zsh history ⏳"
+if [ ! -f "/workspaces/.data/.zsh_history" ]; then
+  touch /workspaces/.data/.zsh_history
+fi
+ln -sf /workspaces/.data/.zsh_history ~/.zsh_history
+tput cuu1
+tput el
+echo -e "[Info] Zsh history linked ✔"
+
+# autojump data 持久化
+echo -e "[Info] Linking autojump history ⏳"
+mkdir -p /workspaces/.data/autojump
+rm -rf ~/.local/share/autojump && ln -sf /workspaces/.data/autojump ~/.local/share
+tput cuu1
+tput el
+echo -e "[Info] Autojump history linked ✔"
+
+# ssh key config
+mkdir -p /workspaces/.data/.ssh
+rm -rf ~/.ssh
+ln -sf /workspaces/.data/.ssh ~/.ssh
+echo -e "[Info] Check Git ssh key config ⏳"
+if [ ! -f "/workspaces/.data/.ssh/id_rsa" ]; then
+  if [ ! -f "/workspaces/.data/.ssh/id_rsa.pub" ]; then
+    rm -rf ~/.ssh/*
+    ssh-keygen -q -t rsa -N "" -f ~/.ssh/id_rsa
+  fi
+  echo -e "\n${RED}SSH Public Key:"
+  cat ~/.ssh/id_rsa.pub
+  echo -e "${NC}"
+  echo -e "[Info] Please copy the SSH Public Key to GitHub or GitLab if needed ⚠️"
+else
+  tput cuu1
+  tput el
+  echo -e "[Info] Check git ssh key pass ✔"
+fi
+
+# Configure core dump file path to current directory with process info
+sudo sh -c 'echo "core.%p.%e.%t" > /proc/sys/kernel/core_pattern'
+# Remove core file size limit to enable full dumps
+sudo bash -c "ulimit -c unlimited"
+
+# all pass
+echo -e "🎉🎉🎉  Setup successful  🎉🎉🎉"
+echo -e "\n${RED}If vscode extension not active, please use ctrl+shift+P to open command window, then enter 'reload window' to active extension\n${NC}"

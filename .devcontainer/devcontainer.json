@@ -1,0 +1,69 @@
+{
+  "name": "aimde",
+  "build": {
+		"dockerfile": "Dockerfile"
+	},
+  "runArgs": [
+    "--init",
+    "--privileged",
+    "--shm-size=10g"
+  ],
+  "mounts": [
+    "source=dind-var-lib-docker-${env:USER},target=/var/lib/docker,type=volume",
+    "source=data-volume-for-${env:USER},target=/workspaces/data/,type=volume",
+    "source=user-volume-for-${env:USER},target=/workspaces/.data/,type=volume",
+    "source=/tmp,target=/tmp,type=bind"
+  ],
+  "overrideCommand": false,
+  "settings": {
+    "resmon.show.battery": false,
+    "resmon.show.cpufreq": false,
+    "terminal.integrated.profiles.linux": {
+      "zsh": {
+        "path": "/bin/zsh"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "workbench.editorAssociations": {
+      "*.md": "vscode.markdown.preview.editor"
+    },
+    "remote.localPortHost": "allInterfaces"
+  },
+  "extensions": [
+    "ms-vscode.cpptools",
+    "ms-vscode.cpptools-themes",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "redhat.vscode-yaml",
+    "webfrek.debug",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "mjohns.clang-format",
+    "mutantdino.resourcemonitor",
+    "ms-vscode.live-server",
+    "foxundermoon.shell-format",
+    "esbenp.prettier-vscode",
+    "BazelBuild.vscode-bazel",
+    "ms-python.python",
+    "ibm.output-colorizer",
+    "ms-ceintl.vscode-language-pack-zh-hans",
+    "janisdd.vscode-edit-csv",
+    "mathematic.vscode-pdf"
+  ],
+  "forwardPorts": [
+    2222
+  ],
+  "portsAttributes": {
+    "2222": {
+      "label": "SSH port",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "setup-init",
+  "remoteUser": "vscode",
+  "hostRequirements": {
+    "memory": "8gb"
+  },
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}"
+  }
+}
