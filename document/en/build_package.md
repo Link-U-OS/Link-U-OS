@@ -4,7 +4,7 @@
 
 ### Pull integration Repository
 
-If you have already completed the operation through [Clone LinkQ Code Repository](./setup_environment.md#clone-linkq-code-repository), the integration repository should already exist in the sibling directory and you can skip this step.
+If you have already completed the operation through [Clone Link-U-OS Code Repository](./setup_environment.md#clone-Link-U-OS-code-repository), the integration repository should already exist in the sibling directory and you can skip this step.
 
 Otherwise, execute the following commands:
 ```bash

@@ -1,6 +1,6 @@
 # Development Environment Setup
 
-## Clone the LinkQ Repository
+## Clone the Link-U-OS Repository
 ```bash
 git clone --recursive git@github.com:Link-U-OS/Link-U-OS.git
 ```

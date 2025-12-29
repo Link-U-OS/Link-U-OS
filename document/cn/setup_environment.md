@@ -1,6 +1,6 @@
 # 安装开发环境
 
-## 克隆 LinkQ 代码仓库
+## 克隆 Link-U-OS 代码仓库
 ```bash
 git clone --recursive git@github.com:Link-U-OS/Link-U-OS.git
 ```

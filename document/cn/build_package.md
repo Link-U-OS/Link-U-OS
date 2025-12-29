@@ -4,7 +4,7 @@
 
 ### 拉取 integration 仓库
 
-如果已通过[克隆 LinkQ 代码仓库](./setup_environment.md#克隆-linkq-代码仓库)完成操作，integration 仓库应已存在于同级目录中，可跳过此步骤。
+如果已通过[克隆 Link-U-OS 代码仓库](./setup_environment.md#克隆-Link-U-OS-代码仓库)完成操作，integration 仓库应已存在于同级目录中，可跳过此步骤。
 
 否则，执行以下命令：
 ```bash
