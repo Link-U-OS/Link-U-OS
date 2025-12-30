@@ -402,7 +402,8 @@ USER vscode
 # ------------------------------------------------------------------------------
 
 # Install Oh My Zsh framework
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+RUN git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh && \
+    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # Install fzf (fuzzy finder) for interactive command/file searching
 RUN wget https://github.com/junegunn/fzf/archive/refs/heads/master.zip -O /tmp/fzf.zip && \
