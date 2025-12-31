@@ -8,9 +8,9 @@ Link-U OS is an open-source embodied intelligent operating system designed to me
 
 ---
 
-## Link-U OS Alpha Release
+## Link-U OS Alpha
 
-**Core Features**: Based on production-proven full-size A2 robot, featuring open-source cross-platform embodied software framework, reinforcement learning-based bipedal locomotion control framework, and an all-in-one toolchain for bipedal locomotion simulation, training, and deployment.
+**Core Features**: Based on production-proven full-size Agibot Expedition A2 platform, open-source cross-platform embodied software framework, reinforcement learning-based bipedal locomotion control framework, and an end-to-end toolchain for bipedal locomotion simulation, training, and deployment.
 
 ### Cross-Platform Embodied Software Framework
 
@@ -41,12 +41,12 @@ Starting from real mechanical structures, abstracting complex mechanisms and dri
 
 ## System Architecture
 
+![architecture_overview](./document/en/images/architecture_overview.png)
+
 ### Multi-Level User Support
 - **Hardware Developers**: Supports developers with A2 robots for hands-on development and verification
 - **Simulation Learners**: Supports learners without A2 robots to learn and experiment through simulation environments
 - **Ecosystem Partners**: Supports ecosystem partners for hardware adaptation based on the OS ecosystem
-
-![architecture_overview](./document/en/images/architecture_overview.png)
 
 
 ## Documentation
