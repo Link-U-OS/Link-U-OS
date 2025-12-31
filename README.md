@@ -1,39 +1,54 @@
-English | [中文](README.zh_CN.md)
-
 # Link-U-OS
 
-## Project Goals
+English | [中文](README_CN.md)
 
-This project aims to build an open robot development ecosystem with the following core features:
-- **OS Minimal Subsystem** - Provides a lightweight operating system foundation
-- **Motion Control Module** - Contains models and model training code
-- **Motion Control Simulation Testing** - Provides extensions and robot deployment (A2) toolchain
-- **A2 Secondary Development Capabilities** - Supports secondary development capabilities including actuator protocol standards, actuator and data acquisition/motion distribution extension processes
+## Introduction
 
-## Project Advantages
+Link-U OS is an open-source embodied intelligent operating system designed to meet the full-scenario requirements of embodied intelligent robots. It aims to establish an ecosystem architecture that "adapts to embodied hardware on the southbound and supports intelligent applications on the northbound." At the underlying layer, it provides foundational service frameworks such as stable and efficient distributed swarm real-time communication and hardware abstraction. At the upper layer, it opens up an agent service framework that supports the standardized integration of intelligent foundation models for interaction, manipulation, and locomotion, thereby lowering the barrier to application development. Furthermore, it offers a comprehensive toolchain covering development and debugging, simulation and verification, deployment management, and data recording etc. This empowers developers to rapidly establish a technical closed loop from virtual simulation to physical deployment.
 
-### 🎯 **Multi-level User Coverage**
-- Supports **developers with A2 robots** for physical development and validation
-- Supports **learners without A2 robots** for learning and experimentation through simulation environments
-- Welcomes **ecosystem partners** for collaborative development based on the OS ecosystem
+---
 
-### 🔧 **Complete Development Toolchain**
-- **Standardized Development Environment** - Unified development and compilation environment with one-click deployment scripts, eliminating environment configuration differences and lowering development barriers
-- **Modern Build System** - Based on Bazel and other tools supporting multi-platform compilation, integrated with intelligent dependency management to ensure version compatibility
-- **Simulation Environment**: Training source code based on MuJoCo and Isaac Gym/Lab
-- **Physical Deployment**: Supports complete deployment process from simulation to physical robots
-- **Flexible Extension**: Provides secondary development capabilities including actuator extension and motion control framework replacement
+## Link-U OS Alpha Release
 
-### 🌐 **Open Source Ecosystem**
-- Fully open source, lowering the barrier to robot development
-- Supports flexible choice between commercial and open source software versions
-- Builds an active developer community to promote technical exchange and innovation
+**Core Features**: Based on production-proven full-size A2 robot, featuring open-source cross-platform embodied software framework, reinforcement learning-based bipedal locomotion control framework, and an all-in-one toolchain for bipedal locomotion simulation, training, and deployment.
 
-### 📦 **Modular Architecture**
-- Replaceable motion control framework
-- Extensible system software
-- Flexible secondary development interfaces
+### Cross-Platform Embodied Software Framework
 
-## Document
+#### 🚀 Unified Communication Middleware
+Built on our in-house middleware AimRT, supporting both Protobuf and ROS2 Message formats, providing multiple communication modes including RPC and Topic for standardized and efficient inter-module interfaces, while maintaining compatibility with native ROS2 ecosystem.
 
-[Quick Start Guide](document/en/index.md)
+#### 🛠️ Efficient Build and Integration
+Based on Bazel build system, easily managing multi-repository dependencies and third-party libraries, supporting one-click cross-compilation for heterogeneous platforms from x86_64 to aarch64.
+
+#### 🚢 End-to-End Development and Deployment
+Provides standardized Docker development environment with automated build and packaging capabilities, complemented by the graphical deployment tool AimStudio, enabling an integrated workflow from development to deployment.
+
+### RL-Based Bipedal Locomotion Simulation, Training, and Deployment Framework
+
+#### 🧠 All-in-One Toolchain
+Built on MuJoCo / Isaac Gym, providing a complete toolchain covering training, simulation verification, and real robot deployment.
+
+#### 🚀 Efficient and Stable Training
+Centered around PPO algorithm, achieving stable convergence and reusable locomotion policy training for humanoid robot standing and walking.
+
+#### 🌐 Sim2Sim / Sim2Real Support
+Single policy codebase seamlessly runs across MuJoCo simulation and real robots.
+
+#### 🛠️ Engineering-Oriented Control Abstraction
+Starting from real mechanical structures, abstracting complex mechanisms and drive constraints into control interfaces directly usable by reinforcement learning.
+
+---
+
+## System Architecture
+
+### Multi-Level User Support
+- **Hardware Developers**: Supports developers with A2 robots for hands-on development and verification
+- **Simulation Learners**: Supports learners without A2 robots to learn and experiment through simulation environments
+- **Ecosystem Partners**: Supports ecosystem partners for hardware adaptation based on the OS ecosystem
+
+![architecture_overview](./document/en/images/architecture_overview.png)
+
+
+## Documentation
+
+📖 [Quick Start Guide](document/en/index.md)
